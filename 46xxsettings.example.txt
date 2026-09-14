@@ -1,0 +1,36 @@
+## Avaya 96x1 SIP settings for a third-party (non-Avaya) SIP server.
+## Copy to stage1/46xxsettings.txt and adjust for your environment.
+## Account (user/extension + password) is appended by serve_avaya.py from .sip
+## via FORCE_SIP_* — do NOT put the password here.
+
+## Signaling: SIP, third-party call control, no Avaya Aura environment
+SET SIG 2
+SET ENABLE_3PCC_ENVIRONMENT 1
+SET ENABLE_AVAYA_ENVIRONMENT 0
+SET DISCOVER_AVAYA_ENVIRONMENT 0
+
+## Config server over HTTP (see README: HTTPS returns response 0 on this fw).
+## SIP_CONTROLLER_LIST is overwritten per-account by serve_avaya.py (numeric IP).
+SET CONFIG_SERVER_SECURE_MODE 1
+SET TLSSRVRID 0
+SET SIP_CONTROLLER_LIST 198.51.100.10:5060;transport=udp
+SET SIPDOMAIN sip.example.com
+SET SIPREGPROXYPOLICY alternate
+SET SIMULTANEOUS_REGISTRATIONS 1
+SET ENABLE_PPM_SOURCED_SIPPROXYSRVR 0
+SET ENABLE_PRESENCE 0
+SET ENFORCE_SIPS_URI 0
+SET SUBSCRIBE_SECURITY 0
+SET SEND_DTMF_TYPE 2
+
+## Time (point SNTPSRVR at your router/NTP server)
+SET SNTPSRVR 192.0.2.1
+SET GMTOFFSET 1:00
+SET DSTOFFSET 1
+SET DSTSTART LSunMar2L
+SET DSTSTOP LSunOct3L
+SET DAYLIGHT_SAVING_SETTING_MODE 2
+
+## Optional custom idle logo: 217x130 JPG served from your HTTP server
+# SET LOGOS "MyLogo=http://192.0.2.5/l.jpg"
+# SET CURRENT_LOGO MyLogo

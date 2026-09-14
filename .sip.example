@@ -1,0 +1,11 @@
+# SIP accounts for zero-touch provisioning. Copy to ".sip" (chmod 600).
+# One account per line:  server;username;password
+#   server   = host[:port]   (host may be a DNS name or an IPv4 address)
+#   username = SIP user / extension
+#   password = SIP password (max 13 characters on 96x1 firmware)
+#
+# serve_avaya.py serves the first account, or the one named by SIP_ACCOUNT=<username>.
+# The password is injected into 46xxsettings.txt over HTTP only; it is never logged.
+#
+# Example (fill in your own PBX / SIP trunk):
+# sip.example.com:5060;1001;s3cret

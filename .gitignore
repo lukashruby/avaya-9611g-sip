@@ -1,0 +1,22 @@
+# SIP credentials — NEVER commit
+.sip
+
+# Avaya firmware (licensed, download from Avaya Support / your distributor)
+*.zip
+*.tar
+*.bin
+stage1/
+provisioning/stage1/
+
+# TLS keys/certs
+tls/
+*.pem
+*.key
+
+# Runtime logs and captures
+*.log
+*.pcap
+
+__pycache__/
+*.pyc
+.DS_Store
