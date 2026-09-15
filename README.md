@@ -1,9 +1,9 @@
 # Avaya 96x1 → SIP, zero-touch provisioning to a third-party PBX
 
 Convert an Avaya 9608/9611G/9621G/9641G deskphone from H.323 to SIP and
-auto-register it to a **non-Avaya** SIP server (tested with a 9611G "D02B" and
-[Odorik](https://www.odorik.cz/), a Czech SIP trunk), with **no typing on the
-phone keypad** — everything comes from a local HTTP file server + DHCP.
+auto-register it to a **non-Avaya** SIP server (tested with a 9611G "D02B" against
+a third-party SIP trunk), with **no typing on the phone keypad** — everything
+comes from a local HTTP file server + DHCP.
 
 The one thing that made this hard is documented in **[Lessons learned](#lessons-learned)**.
 If you only read one section, read that: **Python's `http.server` does not work
@@ -159,5 +159,5 @@ Works, but it's per-phone and defeats the point of provisioning.
 
 ---
 
-*Written up from a real conversion of a 9611GD02B to SIP on Odorik. Provided
-as-is; verify against your own Avaya documentation and firmware.*
+*Written up from a real conversion of a 9611GD02B to SIP on a third-party SIP
+trunk. Provided as-is; verify against your own Avaya documentation and firmware.*
